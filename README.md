@@ -1,0 +1,9 @@
+# Online-food-ordering
+Languages/Technologies Used: - Java, Servlets, JSP, JDBC, JavaScript, HTML, JSP Custom Tags,Session Listener.
+
+1.	Project starts with a login page where user has to enter user name and password. If user name and password entered are correct he is directed to Categories page (category.jsp) of the project else is asked to enter correct user name and password.
+2.	Categories section includes various categories of food dishes such as Snacks, Beverages, Starters, Main Course etc. User now has to select category of his choice. Once he selects category of his choice, a list of food dishes available in that category is displayed to him.
+3.	User has to select the food dishes which he wants to order and fill their respective quantities in nos. Once selected, user has to click “Add my Order” button. The selected items will be added to his order. User can now check and confirm his order by clicking on “Check my Order” button or can go back to Categories section to add food dishes of another category and so on. If the User clicks on “Check my Order” button he will be able to see a list of food dishes along with their quantities which he added till now. Here, User can completely remove food dishes of his choice and increase as well as decrease quantities of desired food dishes. Also if User wants to add new food dishes to his order, he can easily do it by clicking on “Back to Categories” link and come here again to check and confirm his order.
+4.	Once full satisfied he just has to fill his address details and click on “Confirm Order” button. Once the User has confirmed his order all his order details will be added to Order Database. Also we get a message on Console along with its Order Id if an order has been placed. 
+5.	User now can make a new order if he wants to or else logout and end the ordering session.
+               

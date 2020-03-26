@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+D:\Samsung data\Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2356325472.index
+\OnlineFoodStore\src
+D:\Samsung data\Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\648987399.index
+\test\src
+D:\Samsung data\Project\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3061240928.index
+\OnlineFoodStore\src

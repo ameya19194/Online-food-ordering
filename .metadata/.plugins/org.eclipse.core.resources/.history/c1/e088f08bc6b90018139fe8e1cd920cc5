@@ -1,0 +1,10 @@
+package test;
+
+public class B {
+
+	public static void main(String[] args) {
+		String[] s={"1","2","3","10","100","5","20"};
+
+	}
+
+}

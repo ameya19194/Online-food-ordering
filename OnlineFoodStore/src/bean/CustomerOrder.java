@@ -1,0 +1,479 @@
+package bean;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.TreeSet;
+
+public class CustomerOrder implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+private List<String> itemlist;
+private List<String> qtyList;
+private String address;
+private String name;
+//Price Database//
+
+int teaCost=20;
+int coffeeCost=30;
+int milkCost=30;
+int manchowsoupCost=85;
+int friedriceCost=120;
+int serpariceCost=160;
+int shezwanriceCost=150;
+int shezwannoodlesCost=155;
+int hukkaCost=160;
+int serpanoodlesCost=170;
+int idliCost=45;
+int meduCost=50;
+int dahivadaCost=50;
+int upmaCost=50;
+int sheeraCost=40;
+int pohaCost=40;
+int batatavadaCost=20;
+int vegcutCost=25;
+int puribhajiCost=25;
+int misalCost=35;
+int choleCost=140;
+int pavBhajiCost=160;
+int breadbutterCost=30;
+int vegsandwichCost=35;
+int vegcheesesandwichCost=40;
+int vegcheesetoastCost=50;
+int vegtoastCost=45;
+int vegburgerCost=50;
+int vegcheeseburgerCost=60;
+int bournvitaCost=20;
+int tomatoCost=70;
+int sweetcornCost=100;
+int palaksoupCost=110;
+int babycornCost=110;
+int hotsoupCost=110;
+int vegseekhCost=175;
+int mushroomtikkaCost=180;
+int babytikkaCost=175;
+int gobitandoriCost=195;
+int paneertikkaCost=195;
+int paneerlasooniCost=195;
+int paneerachariCost=185;
+int paneerhukkkaCost=160;
+int veglollipopCost=125;
+int chinesebhelCost=120;
+int vegcrispyCost=130;
+int potatocrispyCost=130;
+int vegspringRollCost=135;
+int mushroomspringCost=140;
+int gobiManchurianCost=145;
+int vegkolhapuriCost=145;
+int vegMakhanwalaCost=145;
+int bhunaMasalaCost=165;
+int bhindiMasalaCost=135;
+int chanaMasalaCost=130;
+int paneerMakhanCost=155;
+int paneerTikkaMasalaCost=160;
+int palakPaneerCost=170;
+int dalFryCost=150;
+int steamRiceCost=120;
+int jeeraCost=150;
+int biryaniCost=70;
+int pulavCost=160;
+int rotiCost=20;
+int chapatiCost=10;
+int naanCost=30;
+int breadCost=15;
+int pepsiCost=20;
+int maazaCost=20;
+int lassiCost=35;
+int mangoCost=50;
+int strawberryCost=50;
+int vanscoopCost=45;
+int strawScoop=45;
+
+
+
+public CustomerOrder() {
+	//System.out.println("CustomerOrder default constr");
+}
+
+public String getAddress() {
+	return address;
+}
+public void setAddress(String address) {
+	this.address = address;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+
+public List<String> getItemlist() {
+	return itemlist;
+}
+
+public void setItemlist(List<String> itemlist) {
+	this.itemlist = itemlist;
+}
+
+public List<String> getQtyList() {
+	return qtyList;
+}
+
+public void setQtyList(List<String> qtyList) {
+	this.qtyList = qtyList;
+}
+
+public int getPriceByItemName(String s)
+{
+	if(s.equals("Tea"))
+		return teaCost;
+	
+	if(s.equals("Coffee"))
+		return coffeeCost;
+	
+	if(s.equals("Milk"))
+		return milkCost;
+
+	if(s.equals("Bournvita"))
+		return bournvitaCost;
+	
+	if(s.equals("Shezwan Rice"))
+		return shezwanriceCost;
+	
+	if(s.equals("Fried Rice"))
+		return friedriceCost;
+	
+	if(s.equals("Serpa Rice"))
+		return serpariceCost;
+	
+	if(s.equals("Shezwan Noodles"))
+		return shezwannoodlesCost;
+	
+	if(s.equals("Hukka Noodles"))
+		return hukkaCost;
+	
+	
+	if(s.equals("Serpa Noodles"))
+		return serpanoodlesCost;
+	
+	if(s.equals("Idli"))
+		return idliCost;
+	
+	if(s.equals("Medu Vada"))
+		return meduCost;
+	
+
+	if(s.equals("Dahi Vada"))
+		return dahivadaCost;
+	
+
+	if(s.equals("Upma"))
+		return upmaCost;
+	
+	if(s.equals("Sheera"))
+		return sheeraCost;
+	
+	
+	if(s.equals("Poha"))
+		return pohaCost;
+	
+
+	if(s.equals("Batata Vada"))
+		return batatavadaCost;
+	
+
+	if(s.equals("Veg Cutlet Vada"))
+		return vegcutCost;
+	
+	if(s.equals("Puri Bhaji"))
+		return puribhajiCost;
+	
+	if(s.equals("Misal Pav"))
+		return misalCost;
+	
+	if(s.equals("Chole Bhature"))
+		return choleCost;
+	
+
+	if(s.equals("Pav Bhaji"))
+		return pavBhajiCost;
+	
+	if(s.equals("Bread Butter"))
+		return breadbutterCost;
+	
+	if(s.equals("Veg Sandwich"))
+		return vegsandwichCost;
+	
+
+	if(s.equals("Veg Cheese Sandwich"))
+		return vegcheesesandwichCost;
+	
+	if(s.equals("Veg Toast"))
+		return vegtoastCost;
+	
+
+	if(s.equals("Veg Cheese Toast"))
+		return vegcheesetoastCost;
+	
+	if(s.equals("Veg Burger"))
+		return vegburgerCost;
+	
+	if(s.equals("Veg Cheese Burger"))
+		return vegcheeseburgerCost;
+	
+	
+	if(s.equals("Tomato Soup"))
+		return tomatoCost;
+	
+
+	if(s.equals("Manchow Soup"))
+		return manchowsoupCost;
+	
+
+	if(s.equals("Sweet Corn Soup"))
+		return sweetcornCost;
+	
+
+	if(s.equals("Palak Soup"))
+		return palaksoupCost;
+	
+
+	if(s.equals("Babycorn Soup"))
+		return babycornCost;
+	
+
+	if(s.equals("Hot and Sour Soup"))
+		return hotsoupCost;
+	
+	if(s.equals("Veg Seekh Kabab"))
+		return vegseekhCost;
+	
+
+	if(s.equals("Mushroom Tikka"))
+		return mushroomtikkaCost;
+	
+	if(s.equals("Babycorn Tikka"))
+		return babytikkaCost;
+	
+	if(s.equals("Gobi Tandoori"))
+		return gobitandoriCost;
+	
+
+	if(s.equals("Paneer Tikka Dry"))
+		return paneertikkaCost;
+	
+	if(s.equals("Paneer Lasooni Tikka"))
+		return paneerlasooniCost;
+	
+
+	if(s.equals("Paneer Achari Tikka"))
+		return paneerachariCost;
+	
+	if(s.equals("Paneer Hukka"))
+		return paneerhukkkaCost;
+	
+	if(s.equals("Veg Lollipop"))
+		return veglollipopCost;
+	
+
+	if(s.equals("Chinese Bhel"))
+		return chinesebhelCost;
+	
+
+	if(s.equals("Veg Crispy"))
+		return vegcrispyCost;
+	
+	if(s.equals("Potato Crispy"))
+		return potatocrispyCost;
+	
+
+	if(s.equals("Veg Spring Roll"))
+		return vegspringRollCost;
+	
+	if(s.equals("Mushroom Spring Roll"))
+		return mushroomspringCost;
+	
+
+	if(s.equals("Gobi Manchurian"))
+		return gobiManchurianCost;
+	
+	if(s.equals("Veg Kolhapuri"))
+		return vegkolhapuriCost;
+	
+
+	if(s.equals("Veg Makhanwala"))
+		return vegMakhanwalaCost;
+	
+
+	if(s.equals("Bhuna Masala"))
+		return bhunaMasalaCost;
+	
+
+	if(s.equals("Chana Masala"))
+		return chanaMasalaCost;
+	
+
+	if(s.equals("Paneer Makhanwala"))
+		return paneerMakhanCost;
+	
+
+	if(s.equals("Paneer Tikka Masala"))
+		return paneerTikkaMasalaCost;
+	
+	if(s.equals("Palak Paneer"))
+		return palakPaneerCost;
+	
+	if(s.equals("Dal Fry"))
+		return dalFryCost;
+	
+	if(s.equals("Steam Rice"))
+		return steamRiceCost;
+	
+
+	if(s.equals("Jeera Rice"))
+		return jeeraCost;
+	
+	if(s.equals("Veg Biryani"))
+		return biryaniCost;
+	
+	if(s.equals("Pulav"))
+		return pulavCost;
+	
+	if(s.equals("Pepsi"))
+		return pepsiCost;
+	
+	if(s.equals("Maaza"))
+		return maazaCost;
+	
+	if(s.equals("Lassi"))
+		return lassiCost;
+	
+	if(s.equals("Mango Juice"))
+		return mangoCost;
+
+	if(s.equals("Strawberry Juice"))
+		return strawberryCost;
+	
+	if(s.equals("Vanilla Scoop"))
+		return vanscoopCost;
+	
+	if(s.equals("Strawberry Scoop"))
+		return strawScoop;
+	
+
+	if(s.equals("Roti"))
+		return rotiCost;
+	
+
+	if(s.equals("Chapati"))
+		return chapatiCost;
+	
+	if(s.equals("Naan"))
+		return naanCost;
+	
+	
+	if(s.equals("Bread"))
+		return breadCost;
+	
+	return 0;
+}
+
+public int calculateTotalPrice()
+{
+	int c=0;
+	int size=qtyList.size();
+	//System.out.println(size);
+	for(int j=0;j<=size-1;j++)
+	{
+		c=c+(Integer.parseInt(qtyList.get(j)) * this.getPriceByItemName(itemlist.get(j)) );
+	}
+	return c;
+}
+
+public void reduceQty()
+{
+	for(int c=0;c<qtyList.size();c++ )
+	{
+		if(Integer.parseInt(qtyList.get(c))>20)
+		{
+			qtyList.set(c, "20");
+		}
+	}
+}
+
+public void deleteDuplicates()
+{
+	if(itemlist!=null)
+	{
+		for(int i=0; i<itemlist.size();i++)
+		{
+			for(int j=i+1;j<itemlist.size();j++)
+			{
+				if(itemlist.get(i).equals(itemlist.get(j)))
+				{
+					int sum=Integer.parseInt(qtyList.get(i))+Integer.parseInt(qtyList.get(j));
+					qtyList.set(i,String.valueOf(sum));
+				}
+			}
+		}
+		//End of 1st For loop.
+		TreeSet<Integer> t=new TreeSet<>();
+		for(int i=0; i<itemlist.size();i++)
+		{
+			for(int j=i+1;j<itemlist.size();j++)
+			{
+				if(itemlist.get(i).equals(itemlist.get(j)))
+				{
+					t.add(j);
+				}
+			}
+		}
+		
+		//End of 2nd For loop.
+		int defaultsize=itemlist.size();
+		int itemcounter=-1;
+		
+		for(int a:t)
+		{
+				itemcounter++;
+			if(itemlist.size()<defaultsize)
+			{
+				itemlist.remove(a-itemcounter);
+			}
+			
+			if (itemlist.size()==defaultsize) {
+			
+				itemlist.remove(a);
+			}
+			
+			
+		}
+		//End of 3rd For loop.
+		int qtycounter=-1;
+		
+		for(int a:t)
+		{
+				qtycounter++;
+			if(qtyList.size()<defaultsize)
+			{
+				qtyList.remove(a-qtycounter);
+			}
+			
+			if (qtyList.size()==defaultsize) {
+			
+				qtyList.remove(a);
+			}
+			
+			
+		}
+		//End of 4th For loop.
+	}
+	
+	if(itemlist==null)
+	{
+		
+	}
+	
+}
+
+}

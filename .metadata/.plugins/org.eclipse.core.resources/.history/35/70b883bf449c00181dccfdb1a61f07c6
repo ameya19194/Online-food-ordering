@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Category</title>
+</head>
+<body>
+<h5 style="font-family: Consolas">
+<%
+out.println("Welcome to Category List"+" "+session.getAttribute("User"));
+out.println("<br>Select a category and add desired items to your order.");
+%>
+</h5>
+<a href="/OnlineFoodStore/Categories/beverages.jsp" style="font-family: Consolas">Beverages</a>
+<a href="/OnlineFoodStore/Categories/chinese.jsp" style="font-family: Consolas">Chinese</a> 
+<a href="/OnlineFoodStore/curry.jsp" style="font-family: Consolas">Curry</a> 
+
+<br><br>
+<h2><a href="details.jsp" style="font-family: Consolas">Order details</a></h2> 
+
+</body>
+</html>

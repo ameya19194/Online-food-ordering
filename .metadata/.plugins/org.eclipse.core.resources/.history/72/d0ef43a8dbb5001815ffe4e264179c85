@@ -1,0 +1,60 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>a</title>
+<script type="text/javascript">
+
+function validate(){
+	var x= document.getElementsByName("qty");
+	document.write(x.toString());}
+
+</script>
+</head>
+<body>
+<%-- <%
+//List<String> l=null;
+List<String> l=new ArrayList<String>();
+l.add(0, "Ameya");
+pageContext.setAttribute("list", l,PageContext.PAGE_SCOPE);
+%>
+<c:set var="list" scope="session" value="${pageScope.list}"></c:set>
+<c:if test="${list!=null && list.size()!=0}">
+1
+</c:if>
+
+<c:if test="${list==null || list.size()==0 }">
+2
+</c:if> --%>
+<form action="b.jsp" method="post">
+<!-- <input type="checkbox" name="snacks" value="Idli">
+<input type="checkbox" name="snacks" value="Dosa">
+<input type="checkbox" name="snacks" value="Batata Vada">
+<input type="checkbox" name="snacks" value="Puri Bhaji">
+<input type="checkbox" name="snacks" value="Misal Pav">
+<input type="checkbox" name="snacks" value="Pav Bhaji">
+<input type="submit" value="Submit"> -->
+ <select name="qty">
+               <option value = "1">1</option>
+               <option value = "2">2</option>
+               <option value = "3">3</option>
+               <option value = "4">4</option>
+             </select>
+             
+<select name="qty">
+               <option value = "1">1</option>
+               <option value = "2">2</option>
+               <option value = "3">3</option>
+               <option value = "4">4</option>
+             </select>  
+<input type="button" value="Click" onclick="validate()">                        
+
+</form>
+</body>
+</html>

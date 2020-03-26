@@ -1,0 +1,48 @@
+<%@page import="java.util.*"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>     
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>OrderListController</title>
+</head>
+<body>
+<% 
+String type=request.getParameter("listype");
+int i=Integer.parseInt(type);
+
+switch(i)
+{
+case 1 :
+{System.out.print("Case 1");
+String[] s=request.getParameterValues("beverageslist");
+List<String> bevList=Arrays.asList(s);
+session.setAttribute("bevList", bevList);
+out.print("<h3 style='font-family: Consolas'>Selected items have been added successfully</h3>");
+out.print("<h3 style='font-family: Consolas'>You can add new items to the list if u want to </h3>");
+request.getRequestDispatcher("/Categories/beverages.jsp").include(request, response);
+break;
+}
+
+case 2 :
+{
+String[] s=request.getParameterValues("chineselist");
+List<String> chineseList=Arrays.asList(s);
+session.setAttribute("bevList", chineseList);
+out.print("<h3 style='font-family: Consolas'>Selected items have been added successfully</h3>");
+out.print("<h3 style='font-family: Consolas'>You can add new items to the list if u want to </h3>");
+request.getRequestDispatcher("/Categories/chinese.jsp").include(request, response);
+break;
+}
+
+default:
+{
+System.out.print("Error in coding");
+}
+}
+%>
+
+</body>
+</html>

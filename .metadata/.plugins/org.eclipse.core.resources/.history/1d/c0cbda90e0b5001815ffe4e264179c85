@@ -1,0 +1,47 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+public class A {
+
+	public static void main(String[] args) {
+		List<Integer> l1=new ArrayList<>();
+		l1.add(1);
+		l1.add(2);
+		l1.add(3);
+		l1.add(0);
+		l1.add(0);
+		l1.add(0);
+		l1.add(4);
+		l1.add(5);
+		l1.add(0);
+		l1.add(0);
+		l1.add(6);
+		
+		
+		//System.out.println(l1);
+		List<String> l2=new ArrayList<>();
+		l2.add("a");l2.add("b");l2.add("c");l2.add("d");l2.add("e");l2.add("f");l2.add("g");l2.add("h");
+		l2.add("i");l2.add("j");l2.add("k");
+		
+		Iterator<Integer> itr1= l1.iterator();
+		Iterator<String> itr2= l2.iterator();
+		while (itr1.hasNext()) {
+			itr2.next();
+			if(itr1.next().equals(0))
+			{
+				itr1.remove();
+				itr2.remove();
+			}
+			
+			
+			
+			
+		}
+		
+		System.out.println(l1);
+		System.out.println(l2);
+	}
+}

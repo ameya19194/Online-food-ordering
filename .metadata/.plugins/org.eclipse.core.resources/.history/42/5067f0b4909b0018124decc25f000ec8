@@ -1,0 +1,13 @@
+package dbutility;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class MyDBConnector {
+PreparedStatement pstmt=null;
+	Connection con=null;
+	public Connection getConnection()
+	{
+		
+	}
+}

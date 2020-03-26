@@ -1,0 +1,12 @@
+package dbutility;
+
+import java.sql.Connection;
+
+public class MyDBConnector {
+
+	Connection con=null;
+	public Connection getConnection()
+	{
+		
+	}
+}

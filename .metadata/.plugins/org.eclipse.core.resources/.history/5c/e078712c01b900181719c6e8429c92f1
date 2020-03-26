@@ -1,0 +1,97 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="java.util.*"%>
+       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Order Details</title>
+<style type="text/css">
+table, th, td {
+    border: 1px solid black;
+    font-family: Consolas;
+    border-collapse: collapse;
+    
+}
+
+th, td {
+    padding: 5px;
+}
+
+th
+{
+background-color: rgba(0, 200, 0, 0.2);
+}
+h
+{
+ font-family: Consolas; 
+}
+
+input, label {
+	font-family: Consolas;
+}
+</style>
+</head>
+<body>
+
+
+<jsp:useBean id='a' class="bean.CustomerOrder" scope="session"></jsp:useBean>
+
+<%
+pageContext.setAttribute("a", a, PageContext.SESSION_SCOPE);
+//System.out.println(a.getItemlist().size());
+%>
+<c:set var="a" scope="session" value="${sessionScope.a}"/>
+
+<c:if test="${a.getItemlist()!=null && a.getItemlist().size()!=0}">
+<h1 style="font-family: Consolas" align="center"><u>Your Order details</u></h1>
+<table>
+<col width="200px">
+<col width="100px">
+<col width="150px">
+<col width="70px">
+<tr><th>Name</th><th>Qty(Nos)</th><th>Unit Price(Rs.)</th></tr>
+<c:forEach var="j" begin="0" end="${a.getItemlist().size()-1}">
+
+<tr>
+<td>${a.getItemlist().get(j)}</td>
+<td>${a.getQtyList().get(j)}</td>
+<td>${a.getPriceByItemName(a.getItemlist().get(j))}</td>
+<td><form action="remove.jsp"><input type="hidden" value="${j}" name="hidden"><input type="submit" value="Remove"></form></td>
+<td><form action="decrement.jsp"><input type="hidden" value="${j}" name="hidden"><input type="submit" style="font-size: 18px" value="<"></form></td>
+<td><form action="increment.jsp"><input type="hidden" value="${j}" name="hidden"><input type="submit" style="font-size: 18px" value=">"></form></td>
+</tr>
+</c:forEach>
+</table>
+<br>
+<h4 style="font-family: Consolas"><u>Order Bill: Rs.${a.calculateTotalPrice()}</u></h4>
+<br>
+<form action="orderconfirmed.jsp" method="post">
+<label for="addr">Address:</label>
+<textarea id="addr" name='address' cols='60' rows='4'></textarea><br>
+<div align="center">-----------------------------------------------------------</div>
+<br>
+<h3><a href="category.jsp" style="font-family: Consolas">Back to categories</a></h3>
+<input type='submit' value='Confirm Order' style="font-size: 20px; color:maroon; font-family: Tahoma">
+</form>
+</c:if>
+
+
+<%-- <br>
+<h4 style="font-family: Consolas">Order Bill: Rs.${a.calculateTotalPrice()}</h4>
+<br>
+<form action="orderconfirmed.jsp" method="post">
+<label for="addr">Address:</label>
+<textarea id="addr" name='address' cols='60' rows='4'></textarea>
+<div align="center">-----------------------------------------------------------</div>
+<input type='submit' value='Confirm Order'>
+</form> --%>
+
+<c:if test="${a.getItemlist()==null || a.getItemlist().size()==0}">
+<h3 style="font-family: Consolas; color: red;" align="center">Sorry but you haven't ordered anything yet.</h3>
+<h4><a href="category.jsp" style="font-family: Consolas">Back to Categories</a></h4>
+</c:if>
+
+</body>
+</html>

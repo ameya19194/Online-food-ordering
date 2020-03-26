@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Category</title>
+<style type="text/css">
+a
+{
+font-family: Consolas
+}
+
+#topcorner
+{
+position:absolute;
+   top:0;
+   right:10px;
+}
+
+</style>
+</head>
+<body>
+<h4 style="font-family: Consolas" align="center">
+<%
+out.println("Welcome to Category List"+" "+session.getAttribute("User"));
+out.println("<br><br>Select a category and add desired items to your order.");
+%>
+</h4>
+<ul style="list-style: disc;">
+<li><a href="/OnlineFoodStore/snacks.jsp" >Snacks</a></li>
+<li><a href="/OnlineFoodStore/Categories/beverages.jsp" >Beverages</a></li>
+<li><a href="/OnlineFoodStore/Categories/sandwiches.jsp" >Sandwiches</a></li>
+<li><a href="/OnlineFoodStore/Categories/soups.jsp" >Soups</a></li>
+<li><a href="/OnlineFoodStore/Categories/indianstarters.jsp" >Indian Starters</a></li>
+<li><a href="/OnlineFoodStore/Categories/chinesestarters.jsp" >Chinese Starters</a></li>
+<li><a href="/OnlineFoodStore/Categories/chinese.jsp" >Chinese Main course</a> </li>
+<li><a href="/OnlineFoodStore/Categories/roti.jsp" >Roti/Chapati</a> </li>
+<li><a href="/OnlineFoodStore/Categories/maincourse.jsp" >Main Course</a></li>
+<li><a href="/OnlineFoodStore/Categories/desserts.jsp" >Deserts and Soft Drinks</a></li>
+</ul>
+
+<a href="/logout" id="topcorner">Logout</a>
+
+
+<h4><a href="details.jsp" style="font-family: Consolas; color: red;">Check my Order</a></h4> 
+
+</body>
+</html>
